@@ -1,0 +1,15 @@
+{
+  "name": "uz-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot you can use to make interaction with booking.uz.gov.ua easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "node-telegram-bot-api": "^0.21.1"
+  }
+}
