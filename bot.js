@@ -1,5 +1,6 @@
 var token = process.env.TOKEN;
-
+console.log(token);
+console.log(process.env.NODE_ENV);
 var Bot = require('node-telegram-bot-api');
 var bot;
 
