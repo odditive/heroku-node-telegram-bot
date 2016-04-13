@@ -1,11 +1,11 @@
-var token = '199175048:AAGB19TwOMC1z5kTBYatq0IibKyyRowQgAs';
+var token = process.env.TOKEN;
 
 var Bot = require('node-telegram-bot-api');
 var bot;
 
 if(process.env.NODE_ENV === 'production') {
   bot = new Bot(token);
-  bot.setWebHook('https://my-web-root.com/' + bot.token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
 }
 else {
   bot = new Bot(token, { polling: true });
