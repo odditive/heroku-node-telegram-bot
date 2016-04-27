@@ -1,7 +1,7 @@
 {
-  "name": "uz-telegram-bot",
+  "name": "heroku-node-telegram-bot",
   "version": "1.0.0",
-  "description": "Telegram bot you can use to make interaction with booking.uz.gov.ua easier",
+  "description": "Starter pack for running telegram bot on the Heroku using Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
