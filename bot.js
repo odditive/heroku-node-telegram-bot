@@ -13,8 +13,8 @@ else {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.onText(/^\/s/, function (msg, match) {
-  var name = match[1];
+bot.onText(/^/, function (msg) {
+  var name = msg.from.first_name;
   bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(function () {
     // reply sent!
   });
