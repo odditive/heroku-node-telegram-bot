@@ -1,6 +1,5 @@
 var token = process.env.TOKEN;
-console.log(token);
-console.log(process.env.NODE_ENV);
+
 var Bot = require('node-telegram-bot-api');
 var bot;
 
@@ -12,23 +11,11 @@ else {
   bot = new Bot(token, { polling: true });
 }
 
-console.log('bot server started...');
+console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-// hello command
-bot.onText(/^\/say_hello (.+)$/, function (msg, match) {
+bot.onText(/^\/s/, function (msg, match) {
   var name = match[1];
-  bot.sendMessage(msg.chat.id, 'Hello ' + name + '!').then(function () {
-    // reply sent!
-  });
-});
-
-// sum command
-bot.onText(/^\/sum((\s+\d+)+)$/, function (msg, match) {
-  var result = 0;
-  match[1].trim().split(/\s+/).forEach(function (i) {
-    result += (+i || 0);
-  })
-  bot.sendMessage(msg.chat.id, result).then(function () {
+  bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(function () {
     // reply sent!
   });
 });
