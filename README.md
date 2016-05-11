@@ -54,4 +54,5 @@ Good luck, BotCoder!
 
 P.S. If you see that something is not working, please, open an [issue](https://github.com/volodymyrlut/heroku-node-telegram-bot/issues) or send me a PR if you've managed to make code better.
 
-Sincerely Yours, Volodymyr Lut.
+Created with great passion for bots.
+In case of any bot development propositions, contact me [here]('http://lut.rocks').
