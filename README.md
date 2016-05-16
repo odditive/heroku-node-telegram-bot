@@ -31,7 +31,7 @@ Feel your awesomeness? :sunglasses:
 
 Now when you r a bit drunk, you may wish to add other functionality to your bot and here you can face some problems. The reason is that in development mode your bot works using [polling](https://en.wikipedia.org/wiki/Push_technology#Long_polling) and on the heroku server it uses the [webhook](https://core.telegram.org/bots/api#setwebhook), because heroku will shut down the web-server after a period of inactivity that will result in your polling loop to shut down too. Once webhook was enabled, telegram will return an error `{"ok":false,"error_code":409,"description":"Error: Conflict: another webhook is active"}` when you will try to use polling again, and it's actually ok.
 
-To go back to development mode, you will need to run `npm run switch_to_dev`. This script will disable current webhook and start your local server. Don't be afraid - when you will finish with the changes you may simply push your bot to heroku using `git push heroku master`. It will set the webhook again.
+To go back to development mode, you will need to run `npm run switch_to_dev`. This script will disable current webhook and start your local server. Don't be afraid - when you will finish with the changes you may simply push your bot to heroku using `git push heroku master`. Then you should restart your app using `heroku restart`. It will set the webhook again.
 
 ###Possible OS issues
 
