@@ -9,7 +9,7 @@
     "set_env": "export $(cat .env | xargs)",
     "switch_to_dev": "export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && node index.js"
   },
-  "author": "",
+  "author": "Volodymyr Lut",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
