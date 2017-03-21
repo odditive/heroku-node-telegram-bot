@@ -39,6 +39,7 @@ As i work on MacOS and sometimes on Ubuntu, you may face some problems with my n
 
 1. `npm run set_env` runs `export $(cat .env | xargs)` which actually set key-value pairs from the .env file to the environment.
 2. `npm run switch_to_dev` runs `export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && node index.js` which is actually `npm run set_env` + API call which will reset webhook + `npm start`. If wget don't work (or is not installed) on your OS, you can simply open the `https://api.telegram.org/botYOUR_TOKEN/setWebhook?url=` in your browser, but don't forget to replace YOUR_TOKEN with the token, you've got from the BotFather.
+3. When using Windows also rename 'env_example.cmd'->'env.cmd' and use commands 'set_env_win' and 'start_win'
 
 If your bot is not responding locally, in most cases, you will need to reset the environment variables running `npm run set_env`.
 
