@@ -1,9 +1,9 @@
 # heroku-node-telegram-bot
 Starter pack for running telegram bot on the Heroku using Node.js
 
-#Step-by-step
+# Step-by-step
 
-###Try bot locally
+### Try bot locally
 
 1. Create your own bot using Telegram's [BotFather](https://core.telegram.org/bots#3-how-do-i-create-a-bot) and grab your TOKEN.
 2. Clone or download and unpack this repo.
@@ -16,7 +16,7 @@ Starter pack for running telegram bot on the Heroku using Node.js
 
 Feel your awesomeness? :sunglasses:
 
-###Deploy your bot to the heroku
+### Deploy your bot to the heroku
 
 1. Create the [Heroku account](https://heroku.com) and install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
 2. Login to your Heroku account using `heroku login`.
@@ -27,13 +27,13 @@ Feel your awesomeness? :sunglasses:
 7. Send smth to the bot to check out if it works ok.
 8. Now you r twice awesome, open the second bottle of beer :beer:
 
-###Going further
+### Going further
 
 Now when you r a bit drunk, you may wish to add other functionality to your bot and here you can face some problems. The reason is that in development mode your bot works using [polling](https://en.wikipedia.org/wiki/Push_technology#Long_polling) and on the heroku server it uses the [webhook](https://core.telegram.org/bots/api#setwebhook), because heroku will shut down the web-server after a period of inactivity that will result in your polling loop to shut down too. Once webhook was enabled, telegram will return an error `{"ok":false,"error_code":409,"description":"Error: Conflict: another webhook is active"}` when you will try to use polling again, and it's actually ok.
 
 To go back to development mode, you will need to run `npm run switch_to_dev`. This script will disable current webhook and start your local server. Don't be afraid - when you will finish with the changes you may simply push your bot to heroku using `git push heroku master`. Then you should restart your app using `heroku restart`. It will set the webhook again.
 
-###Possible OS issues
+### Possible OS issues
 
 As i work on MacOS and sometimes on Ubuntu, you may face some problems with my npm scripts, so let's figure out how they work.
 
@@ -42,7 +42,7 @@ As i work on MacOS and sometimes on Ubuntu, you may face some problems with my n
 
 If your bot is not responding locally, in most cases, you will need to reset the environment variables running `npm run set_env`.
 
-###Links and references
+### Links and references
 
 Actually, this repo is created because I've faced problems when I was trying to run the bot using [mvalipour's article](http://mvalipour.github.io/node.js/2015/12/06/telegram-bot-webhook-existing-express/) and [this PR](https://github.com/mvalipour/telegram-bot-webhook/pull/3) to his repo. Still, theese links will be very usefull for the beginners. 
 
