@@ -10,8 +10,8 @@ Starter pack for running telegram bot on the Heroku using Node.js
 3. Go to the app's folder using `cd ~/heroku-node-telegram-bot`
 4. Run `npm install` (in some cases you will need to run this with sudo, you know, just the permissions).
 5. Rename .env_example file into .env and set TOKEN to the value, you've got from the BotFather.
-5. Run `npm run set_env` to set the environment variables from the .env file.
-6. Run `npm start` and send smth to your bot.
+5. Run `npm run set_env` (or `npm run set_env_win` for Windows OS) to set the environment variables from the .env file.
+6. Run `npm start` (or `npm run start_win` for Windows OS) and send smth to your bot.
 7. After it says "hello" to you, open your first bottle of beer :beer:
 
 Feel your awesomeness? :sunglasses:
@@ -39,6 +39,7 @@ As i work on MacOS and sometimes on Ubuntu, you may face some problems with my n
 
 1. `npm run set_env` runs `export $(cat .env | xargs)` which actually set key-value pairs from the .env file to the environment.
 2. `npm run switch_to_dev` runs `export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && node index.js` which is actually `npm run set_env` + API call which will reset webhook + `npm start`. If wget don't work (or is not installed) on your OS, you can simply open the `https://api.telegram.org/botYOUR_TOKEN/setWebhook?url=` in your browser, but don't forget to replace YOUR_TOKEN with the token, you've got from the BotFather.
+3. When using Windows also rename `env_example.cmd` to `env.cmd` and use commands `npm run set_env_win` and `npm run start_win`
 
 If your bot is not responding locally, in most cases, you will need to reset the environment variables running `npm run set_env`.
 
