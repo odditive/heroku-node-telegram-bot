@@ -1,7 +1,7 @@
-var token = process.env.TOKEN;
+const token = process.env.TOKEN;
 
-var Bot = require('node-telegram-bot-api');
-var bot;
+const Bot = require('node-telegram-bot-api');
+let bot;
 
 if(process.env.NODE_ENV === 'production') {
   bot = new Bot(token);
@@ -13,9 +13,9 @@ else {
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
-bot.onText(/^/, function (msg) {
-  var name = msg.from.first_name;
-  bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(function () {
+bot.on('message', (msg) => {
+  const name = msg.from.first_name;
+  bot.sendMessage(msg.chat.id, 'Hello, ' + name + '!').then(() => {
     // reply sent!
   });
 });
