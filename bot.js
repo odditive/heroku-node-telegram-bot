@@ -19,5 +19,5 @@ bot.on('message', (msg) => {
     // reply sent!
   });
 });
-
+ 
 module.exports = bot;
