@@ -17,8 +17,8 @@ var server = app.listen(process.env.PORT, "0.0.0.0", () => {
 });
 
 module.exports = (bot) => {
-
-  app.use(express.static(path.join(__dirname, 'public')))
-  app.set('views', path.join(__dirname, 'views'))
-  app.set('view engine', 'ejs')
-  app.get('/', (req, res) => res.render('pages/index'))
+  app.post('/' + bot.token, (req, res) => {
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
+  });
+};
