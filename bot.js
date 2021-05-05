@@ -42,17 +42,46 @@ else
  district_id=parseInt(addonText);
  if(!(Number.isNaN(addonText)) )
     botMain();
- else botErromsg(1);
+else {getIDfromDistrictName(addonText);
+     botMain(district_id);
+  }
+
 }
 //todo: replace with switch.
 
+
+  function getIDfromDistrictName(dist_name){
+     let formatedString = str => str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+     console.log(formatedString)
+     let arr=kerala_ids.districts;
+
+     for(let i=0;i<arr.length;i++)
+     {
+         if(arr[i].district_name==formatedString)
+            { district_id=arr[i].district_id;
+              console.log(district_id);
+             break;
+            }
+
+     }
+
+
+
+
+  };
+
+
+
+
+
 function botErromsg(n){
+    console.log("err")
     let sendText=n? 'include a valied district_id' : 'ultra_error'
     bot.sendMessage(chatId,sendText);
     return;
     }
 
-function botMain(){
+function botMain(district_id){
   test(district_id,(err,val)=>{
       if(err) return console.log(err);
 
